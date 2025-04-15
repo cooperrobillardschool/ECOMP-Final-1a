@@ -6,7 +6,7 @@ for k = 1:size(train_data, 3)
     p = reshape(train_data(:,:,k), 1, 576);
     A = [A; p, 1]; 
 end
-w = pinv(A) * double(smile_flag_train);  % Explicitly convert to double
+w = pinv(A) * (smile_flag_train);
 % Testing
 B = [];
 for k = 1:size(test_data, 3)
